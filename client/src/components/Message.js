@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux';
+import { timeSince } from '../utils/constant';
 
 const Message = ({message}) => {
   const scroll = useRef();
@@ -17,7 +18,7 @@ const Message = ({message}) => {
                 </div>
             </div>
             <div className="chat-header">
-                <time className="text-xs opacity-50 text-white">12:45</time>
+                <time className="text-xs opacity-50 text-gray-700">{`${timeSince(message?.createdAt)}`}</time>
             </div>
             <div className={`chat-bubble ${message?.senderId !== authUser?._id ? 'bg-gray-200 text-black' : 'bg-gray-800 text-white'} `}>{message?.message}</div>
         </div>

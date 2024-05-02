@@ -10,11 +10,6 @@ const MessageContainer = () => {
   const dispatch = useDispatch();
 
   const isOnline = onlineUsers?.includes(selectedUser?._id);
-/*
-  useEffect(() => {
-    return () => dispatch(setSelectedUser(null));
-  }, [])
-  */
 
   return (
     <>
@@ -32,6 +27,7 @@ const MessageContainer = () => {
                 <p>{selectedUser?.fullname}</p>
             </div>
         </div>
+
     </div> 
     <Messages />
     <SendInput /> 
